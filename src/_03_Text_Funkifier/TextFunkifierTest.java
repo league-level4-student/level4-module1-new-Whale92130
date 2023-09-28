@@ -44,6 +44,7 @@ public class TextFunkifierTest {
 
     @Test
     public void testCustomString() {
-
+    	SwitchWordString rs = new SwitchWordString("Test Test One Two Three");
+        assertEquals("tesT tesT enO owT ehreT", rs.funkifyText());
     }
 }

@@ -3,7 +3,7 @@ package _03_Text_Funkifier;
 public class BackwardsString implements TextFunkifier {
 
     private String unfunkifiedText;
-
+    
     public BackwardsString(String unfunkifiedText) {
 
         this.unfunkifiedText = unfunkifiedText;
@@ -12,8 +12,10 @@ public class BackwardsString implements TextFunkifier {
 
     @Override
     public String funkifyText() {
-
-        return null;
+    	StringBuilder build = new StringBuilder();
+    	build.append(unfunkifiedText);
+    	build.reverse();
+        return build.toString();
 
     }
 }
