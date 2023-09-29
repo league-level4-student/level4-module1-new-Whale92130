@@ -4,32 +4,38 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SwitchWordString implements TextFunkifier{
+public class SwitchWordString implements TextFunkifier {
 	private String unfunkifiedText;
 
-    public SwitchWordString(String unfunkifiedText) {
+	public SwitchWordString(String unfunkifiedText) {
 
-        this.unfunkifiedText = unfunkifiedText;
+		this.unfunkifiedText = unfunkifiedText;
 
-    }
-
-	public String funkifyText() {
-		char[] chars = unfunkifiedText.toCharArray();
-		char[] total = new char[10];
-		ArrayList<Integer> ints = new ArrayList<Integer>();
-		for (int i = 0; i < 10; i++) {
-			ints.add(i);
-		}
-		Collections.shuffle(ints);
-		for(int i = 0; i < chars.length; i++) {
-			total[i] = chars[ints.get(i)];
-		}
-		String total2 ="";
-		for (int i = 0;i<chars.length; i++) {
-			total2 = total2+chars[i];
-		}
-		return total2;
 	}
 
-}
+	public String funkifyText() {
+		String[] words = unfunkifiedText.split(" ");
+		for (int i = 0; i < words.length; i++) {
+			char[] chars = words[i].toCharArray();
+			char temp = chars[0];
+			chars[0] = chars[chars.length - 1];
+			chars[chars.length - 1] = temp;
+			String word = "";
+			for (int p = 0; p < chars.length; p++) {
+				word = word + chars[p];
+			}
+			words[i] = word;
+		}
+		String word = "";
+		for (int p = 0; p < words.length; p++) {
+			word = word + words[p];
+			if (p == words.length - 1) {
 
+			} else {
+				word = word + " ";
+			}
+		}
+		System.out.println(word);
+		return word;
+	}
+}

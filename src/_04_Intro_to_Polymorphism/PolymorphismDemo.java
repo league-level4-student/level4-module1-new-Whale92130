@@ -30,6 +30,9 @@ class Fish extends Animal {
     public void speak() {
         System.out.println("Gurgle Gurgle Gurgle!");
     }
+    public void eat() {
+    	System.out.println("Yum Yum, aglae");
+    }
 }
 
 public class PolymorphismDemo {
@@ -46,7 +49,7 @@ public class PolymorphismDemo {
          * declared as an Animal on the left side.
          */
 
-        Animal animal = new Animal();
+        Animal animal = new Fish();
 
         /*
          * 2. Call the speak method and run the program.
@@ -54,6 +57,7 @@ public class PolymorphismDemo {
          * Even though the variable was declared as an Animal, at run time it
          * will behave like whatever Animal subclass it was instantiated as.
          */
+        animal.speak();
 
         /*
          * 3. Comment out the speak method of the Animal subclass you chose and
@@ -63,7 +67,7 @@ public class PolymorphismDemo {
          * chose, the next closest speak method in the class's inheritance was
          * called. In this case it was Animal class's version of speak.
          */
-
+        ((Fish)animal).eat();
         /*
          * 4. Add another method called eat to the Animal subclass you chose and
          * have it print a description of the animal eating their favorite food
