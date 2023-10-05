@@ -16,42 +16,40 @@ public class MovingMorph extends Polymorph {
 		//x
 		if (swi == false) {
 		if (getX() <= 450) {
-			setX(getX() + r.nextInt(1)+1);
+			setX(getX() + r.nextInt(5)+1);
 		}
 		else {
-			setX(getX()-r.nextInt(1)+1);
 			swi = true;
 			
 		}
 		}
 		if (swi == true)
 		if (getX() >= 10){
-			setX(getX() - r.nextInt(1)+1);
+			setX(getX() - (r.nextInt(5)+1));
 		}
 		else {
-			setX(getX()-r.nextInt(1)+1);
 			swi = false;
 		}
 		//y
 		if (swii == false) {
 			if (getY() <= 450) {
-				setY(getY() + r.nextInt(1)+1);
+				setY(getY() + r.nextInt(5)+1);
+				System.out.println("moving down");
 			}
 			else {
-				setY(getY()-r.nextInt(1)+1);
 				swii = true;
 				
 			}
 			}
-			if (swii == true)
+			if (swii == true) {
 			if (getY() >= 10){
-				setY(getY() - r.nextInt(1)+1);
+				System.out.println("moving up");
+				setY(getY() - (r.nextInt(5)+1));
 			}
 			else {
-				setY(getY()-r.nextInt(1)+1);
 				swii = false;
 			}
-
+			}
 
 	}
 
