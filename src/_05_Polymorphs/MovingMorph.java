@@ -34,7 +34,6 @@ public class MovingMorph extends Polymorph {
 		if (swii == false) {
 			if (getY() <= 450) {
 				setY(getY() + r.nextInt(5)+1);
-				System.out.println("moving down");
 			}
 			else {
 				swii = true;
@@ -43,7 +42,6 @@ public class MovingMorph extends Polymorph {
 			}
 			if (swii == true) {
 			if (getY() >= 10){
-				System.out.println("moving up");
 				setY(getY() - (r.nextInt(5)+1));
 			}
 			else {
