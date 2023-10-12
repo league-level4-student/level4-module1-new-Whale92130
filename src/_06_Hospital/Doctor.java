@@ -30,7 +30,6 @@ public abstract class Doctor {
 	}
 
 public ArrayList<Patient> getPatients() {
-	// TODO Auto-generated method stub
 	return list;
 }
 public void setCanMakeCalls(boolean can) {

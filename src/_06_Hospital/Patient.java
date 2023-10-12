@@ -1,6 +1,9 @@
 package _06_Hospital;
 
 public class Patient {
+	public Patient() {
+		
+	}
 	boolean feelingCaredFor = false;
 	
 	void checkPulse() {
