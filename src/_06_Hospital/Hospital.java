@@ -31,22 +31,20 @@ public class Hospital {
 		return unassigned;
 	}
 
-	public void assignPatientsToDoctors() throws DoctorFullException {
+	public void assignPatientsToDoctors() {
 		// evenly add ussaigned to doctors
-		int fullDocs = 0;
 		while (unassigned.size() > 0) {
 			for (int i = 0; i < docs.size(); i++) {
 				if (docs.get(i).getPatients().size() < 3 && unassigned.isEmpty() == false) {
-					docs.get(i).assignPatient(unassigned.get(0));
+					try {
+						docs.get(i).assignPatient(unassigned.get(0));
+					} catch (DoctorFullException e) {
+						e.printStackTrace();
+					}
 					unassigned.remove(0);
 					System.out.println("add pat");
-				} else {
-					fullDocs++;
 				}
 			}
-		}
-		if (fullDocs == docs.size()) {
-			throw new DoctorFullException();
 		}
 	}
 }

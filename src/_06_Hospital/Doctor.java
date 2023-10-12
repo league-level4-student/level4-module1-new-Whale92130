@@ -16,8 +16,12 @@ public abstract class Doctor {
 		 list.get(i).checkPulse();
 	 }
  }
- void assignPatient(Patient person) {
+ void assignPatient(Patient person) throws DoctorFullException {
 	 list.add(person);
+	 if(list.size()>3) {
+		 list.remove(0);
+		 throw new DoctorFullException(); 
+	 }
  }
  Patient getPatient(int index) {
 	 return list.get(index);
